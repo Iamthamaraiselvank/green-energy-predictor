@@ -58,7 +58,7 @@ function daylightFactor(hour: number) {
 }
 
 export function predict(input: WeatherInput): Prediction {
-  const loc = LOCATIONS.find((l) => l.id === input.location) ?? LOCATIONS[0];
+  const loc = LOCATIONS.find((l) => l.id === input.location) ?? LOCATIONS[0]!;
 
   // --- Solar branch -------------------------------------------------------
   const irradiance = (input.solarRadiation / 1000) * daylightFactor(input.hour);
@@ -142,7 +142,7 @@ const MONTHS = [
 
 /** Historical monthly generation used by the analytics views. */
 export function historicalMonthly(location = "coastal") {
-  const loc = LOCATIONS.find((l) => l.id === location) ?? LOCATIONS[0];
+  const loc = LOCATIONS.find((l) => l.id === location) ?? LOCATIONS[0]!;
   return MONTHS.map((label, i) => {
     const season = Math.sin(((i - 2) / 12) * Math.PI * 2);
     const solar = Math.round((5200 + 1800 * season) * loc.solar);
