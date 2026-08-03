@@ -50,9 +50,9 @@ export function HourlyLineChart({ data }: { data: SeriesPoint[] }) {
         <YAxis {...axis} />
         <Tooltip {...tooltipStyle} />
         <Legend iconType="circle" wrapperStyle={{ fontSize: 12 }} />
-        <Line type="monotone" dataKey="solar" stroke="var(--solar)" strokeWidth={2} dot={false} />
-        <Line type="monotone" dataKey="wind" stroke="var(--wind)" strokeWidth={2} dot={false} />
-        <Line type="monotone" dataKey="hydro" stroke="var(--hydro)" strokeWidth={2} dot={false} />
+        <Line type="monotone" dataKey="solar" name="Solar" stroke="var(--solar)" strokeWidth={2} dot={false} />
+        <Line type="monotone" dataKey="wind" name="Wind" stroke="var(--wind)" strokeWidth={2} dot={false} />
+        <Line type="monotone" dataKey="hydro" name="Hydro" stroke="var(--hydro)" strokeWidth={2} dot={false} />
       </LineChart>
     </ResponsiveContainer>
   );
@@ -93,9 +93,9 @@ export function SourceBarChart({ data }: { data: SeriesPoint[] }) {
         <YAxis {...axis} />
         <Tooltip {...tooltipStyle} />
         <Legend iconType="circle" wrapperStyle={{ fontSize: 12 }} />
-        <Bar dataKey="solar" stackId="a" fill="var(--solar)" radius={[0, 0, 0, 0]} />
-        <Bar dataKey="wind" stackId="a" fill="var(--wind)" />
-        <Bar dataKey="hydro" stackId="a" fill="var(--primary)" radius={[6, 6, 0, 0]} />
+        <Bar dataKey="solar" name="Solar" stackId="a" fill="var(--solar)" radius={[0, 0, 0, 0]} />
+        <Bar dataKey="wind" name="Wind" stackId="a" fill="var(--wind)" />
+        <Bar dataKey="hydro" name="Hydro" stackId="a" fill="var(--primary)" radius={[6, 6, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>
   );
